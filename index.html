@@ -10,7 +10,7 @@
             align-items: center; 
             height: 100vh; 
             margin: 0; 
-            background: #f4f4f4; 
+            background: #e0e0e0; 
         }
         .card { 
             background: rgb(255, 255, 255); 
@@ -18,6 +18,9 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
             width: fit-content; 
             text-align: left; /* Aligns text to the left */
+            transform: scale(1.2); /* Scales everything inside the card by 20% */
+            transform-origin: top left; /* Ensures the scaling happens from the top left corner */
+            border-radius: 10px;
         }
         .link-item, .social-links {
             display: flex;
