@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Baskar Gopinath - Resume</title>
+    <title>Baskar Gopinath - Portfolio</title>
     <style>
-        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #f4f4f4; }
-        .card { background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .social-links { margin-top: 10px; }
-        .social-links a { margin-right: 10px; text-decoration: none; color: #333; }
+        body { 
+            font-family: 'Inter', sans-serif;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            background: #f4f4f4; 
+        }
+        .card { 
+            background: rgb(255, 255, 255); 
+            padding: 40px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            width: fit-content; 
+            text-align: left; /* Aligns text to the left */
+        }
+        .link-item, .social-links {
+            display: flex;
+            align-items: center;
+            justify-content: left;  /* Ensure alignment is set to left */
+            margin-bottom: 10px; 
+        }
+        .link-item img {
+            margin-right: 10px; 
+            height: 30px; 
+        }
+        h1 { 
+            margin-bottom: 20px; 
+        }
+        a {
+            color: black; /* Set link color to black */
+            text-decoration: underline; /* Keeps underline for links */
+        }
+        .social-links a {
+            margin-right: 10px;  /* Spacing between social link items */
+        }
         /* Additional styling can be added here */
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Your Name</h1>
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-        <p><a href="resume-link.pdf">Resume</a> | <a href="your-blog-link.com">Blog</a></p>
-        <div class="social-links">
-            <a href="your-facebook-link">FB</a>
-            <a href="your-linkedin-link">IN</a>
-            <a href="your-twitter-link">TW</a>
+        <h1>Baskar Gopinath</h1>
+        <div class="link-item">
+            <img src="icons/email.webp" alt="Email">
+            <a href="mailto:baskargopinath01@gmail.com">Email</a>
+        </div>
+        <div class="link-item">
+            <img src="icons/resume.jpeg" alt="Resume">
+            <a href="files/baskar_resume.pdf">Resume</a>
+        </div>
+        <div class="link-item">
+            <img src="icons/github.png" alt="GitHub">
+            <a href="https://github.com/bgopi23">GitHub</a> <!-- Ensure to use the full URL for external links -->
+        </div>
+        <div class="link-item">
+            <img src="icons/linkedin.webp" alt="LinkedIn">
+            <a href="https://www.linkedin.com/in/baskar-gopinath-6737a8165/">LinkedIn</a>
         </div>
     </div>
 </body>
