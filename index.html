@@ -32,6 +32,52 @@
             margin-right: 10px; 
             height: 30px; 
         }
+        .link-item button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            padding: 0;
+            width: 12px; /* Ensure the button's width matches the icon's width */
+            height: 12px; /* Ensure the button's height matches the icon's height */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the icon within the button */
+            margin-left: 15px; /* Adjust the margin to space the icon properly */
+        }
+        .link-item button img {
+            height: 20px;
+        }
+        .tooltip {
+            visibility: hidden;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            top: -30px; /* Position above the button */
+            left: 30%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+        }
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+        }
+        .link-item button:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
         h1 { 
             margin-bottom: 20px; 
         }
@@ -50,20 +96,50 @@
         <h1>Baskar Gopinath</h1>
         <div class="link-item">
             <img src="icons/email.webp" alt="Email">
-            <a href="mailto:baskargopinath01@gmail.com">Email</a>
+            <a href="mailto:baskargopinath01@gmail.com" id="email-link">Email</a>
+            <button onclick="copyToClipboard('baskargopinath01@gmail.com', this)">
+                <img src="icons/copy_icon.jpeg" alt="Copy">
+                <span class="tooltip">Copy Link</span>
+            </button>
         </div>
         <div class="link-item">
             <img src="icons/resume.jpeg" alt="Resume">
-            <a href="files/baskar_resume.pdf">Resume</a>
+            <a href="files/baskar_resume.pdf" id="resume-link">Resume</a>
+            <button onclick="copyToClipboard('https://drive.google.com/file/d/1TqnPJvMd7Yonkk-7lVHrPn_Uv30hwNcw/view?usp=sharing', this)">
+                <img src="icons/copy_icon.jpeg" alt="Copy">
+                <span class="tooltip">Copy Link</span>
+            </button>
         </div>
         <div class="link-item">
             <img src="icons/github.png" alt="GitHub">
-            <a href="https://github.com/bgopi23">GitHub</a> <!-- Ensure to use the full URL for external links -->
+            <a href="https://github.com/bgopi23" id="github-link">GitHub</a>
+            <button onclick="copyToClipboard('https://github.com/bgopi23', this)">
+                <img src="icons/copy_icon.jpeg" alt="Copy">
+                <span class="tooltip">Copy Link</span>
+            </button>
         </div>
         <div class="link-item">
             <img src="icons/linkedin.webp" alt="LinkedIn">
-            <a href="https://www.linkedin.com/in/baskar-gopinath-6737a8165/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/baskar-gopinath-6737a8165/" id="linkedin-link">LinkedIn</a>
+            <button onclick="copyToClipboard('https://www.linkedin.com/in/baskar-gopinath-6737a8165/', this)">
+                <img src="icons/copy_icon.jpeg" alt="Copy">
+                <span class="tooltip">Copy Link</span>
+            </button>
         </div>
     </div>
+    <script>
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(function() {
+                const tooltip = button.querySelector('.tooltip');
+                tooltip.innerText = 'Copied!';
+                setTimeout(function() {
+                    tooltip.innerText = button.querySelector('img').alt;
+                }, 2000);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
+
